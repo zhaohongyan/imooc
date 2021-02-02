@@ -39,7 +39,7 @@ const updateBlog = (id, blogData) => {
   const { title, content } = blogData;
   const createTime = Date.now()
 
-  const sql = `update blogs set title='${title}', content='${content}' where id=${id};`
+  const sql = `update blogs set title='${title}',content='${content}',createTime=${createTime} where id=${id};`
   return exec(sql).then(updateData => {
     console.log('updateData is ', updateData)
     if (updateData.affectedRows > 0) {
@@ -49,6 +49,7 @@ const updateBlog = (id, blogData) => {
   });
 }
 
+// 只能删除当前用户自己的博客
 const delBlog = (id, author) => {
   const sql = `delete from blogs where id=${id} and author='${author}'`
   return exec(sql).then(deleteData => {

@@ -1,11 +1,11 @@
 const http = require('http')
-const querystring = require('querystring')
+const qs = require('querystring')
 
 const app = http.createServer((req, res) => {
   const method = req.method;
   const url = req.url;
   const path = req.url.split('?')[0];
-  const query = querystring.parse(req.url.split('?')[1]);
+  const query = qs.parse(req.url.split('?')[1]);
 
   res.setHeader('Content-type', 'application/json')
 
@@ -25,12 +25,13 @@ const app = http.createServer((req, res) => {
     })
 
     req.on('end', () => {
-      resData.postData = postData;
+      resData.postData = JSON.parse(postData);
+      console.log(resData.postData)
       res.end(JSON.stringify(resData))
     })
   }
 })
 
-app.listen(3000, () => {
-  console.log('server is listening 3000')
+app.listen(3001, () => {
+  console.log('server is listening 3001')
 })
