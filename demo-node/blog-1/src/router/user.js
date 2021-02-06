@@ -1,6 +1,6 @@
 const { login } = require('../controller/user');
 const { SuccessModel, ErrorModel } = require('../model/resModel');
-const { getCookieExpires } = require('../common/utils');
+const { getCookieExpires } = require('../utils/getCookieExpires');
 const { set } = require('../db/redis')
 
 const handleUserRouter = (req, res) => {

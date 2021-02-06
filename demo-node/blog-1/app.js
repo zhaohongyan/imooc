@@ -3,7 +3,7 @@ const querystring = require('querystring')
 const { get, set } = require('./src/db/redis')
 const handleBlogRouter = require('./src/router/blog')
 const handleUserRouter = require('./src/router/user')
-const { getCookieExpires } = require('./src/common/utils')
+const { getCookieExpires } = require('./src/utils/getCookieExpires')
 
 // 用于处理 post data 
 const getPostData = (req) => {

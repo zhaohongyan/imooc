@@ -137,6 +137,10 @@ redis
 - session 可不考虑断电丢失数据的问题
 - session 数据量不会太大
 
+- 如何预防sql注入，mysql.escape 
+- 如何预防xss攻击， node包 xss
+- 如何加密密码， node api, crypto
+
 PORT
 
 - node 3000

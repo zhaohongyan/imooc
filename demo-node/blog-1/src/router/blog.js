@@ -57,7 +57,7 @@ const handleBlogRouter = (req, res) => {
   }
 
   // 删除博客
-  if (method === 'POST' && req.path === '/api/blog/del') {
+  if (method === 'POST' && req.path === '/api/blogc') {
     const loginCheckResult = loginCheck(req)
     if (loginCheckResult) {
       return loginCheckResult
